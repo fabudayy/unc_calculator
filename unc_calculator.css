@@ -1,23 +1,21 @@
 html, body {
-    height: 100%; /* Make sure the html and body take up full viewport height */
-    margin: 0; /* Remove default margin */
-    display: flex; /* Display body as flex container */
-    flex-direction: column; /* Stack children (your content) vertically */
-    justify-content: center; /* Center children vertically */
-    align-items: center; /* Center children horizontally */
+    min-height: 100%; /* Adjusted to min-height */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, sans-serif;
     font-weight: bold;
     background-image: url('weed_bg.jpg');
-    background-size: cover; /* Cover the entire page */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Optional: Makes the background fixed during scroll */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .container {
-    width: 90%; /* or max-width for larger screens, e.g., max-width: 600px; */
-    /* Removed margin: 0 auto; since flexbox is now handling centering */
-    text-align: center; /* Center-align the text and inline-elements within the container */
-    /* You might want to add max-width here to control the container's max size */
+    width: 90%;
+    text-align: center;
 }
 
 h1 {
@@ -69,17 +67,19 @@ button {
 }
 
 @media (max-width: 768px) {
+    @media (max-width: 768px) {
     html, body {
-        font-size: 24px; /* Adjust base font size for mobile */
+        font-size: 16px; /* Adjusted for readability */
     }
 
     .container {
-        width: 95%; /* Increase width to use more screen space on mobile */
+        width: 95%;
     }
 
     h1 {
-        font-size: 32px; /* Increase font size for heading on mobile */
-        margin-bottom: 20px; /* Adjust spacing */
+        font-size: 20px; /* Adjusted for readability on small screens */
+        margin-top: 10px; /* Reduced margin to prevent cut-off */
+        margin-bottom: 15px;
     }
 
     .input-row label, .input-row input {
