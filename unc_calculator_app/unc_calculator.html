@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unc Level Calculator</title>
+    <link rel="stylesheet" href="unc_calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Unc Level Calculator</h1>
+        <form id="hangoutForm">
+
+            <div class="input-row">
+                <label for="Duration">Duration (Hours):</label>
+                <input type="number" id="Duration" name="Duration" value="0"><br>
+            </div>
+
+            <div class="input-row">
+                <label for="NumSubstances">Unique Substances Consumed:</label>
+                <input type="number" id="NumSubstances" name="NumSubstances" value="0"><br>
+            </div>
+
+            <div class="input-row">
+                <label for="NumUncs"># of Uncs:</label>
+                <input type="number" id="NumUncs" name="NumUncs" value="0"><br>
+            </div>
+
+            <div class="input-row">    
+                <label for="NumAunties"># of Aunties:</label>
+                <input type="number" id="NumAunties" name="NumAunties" value="0"><br>
+            </div>
+
+            <div class="input-row">
+                <label for="DistanceTraveledFromAdis">Max Distance from Host's Place (Miles):</label>
+                <input type="number" id="DistanceTraveledFromAdis" name="DistanceTraveledFromAdis" value="0"><br>
+            </div>
+
+            <div class="input-row">
+                <label for="NumActivities"># of Unique Activities:</label>
+                <input type="number" id="NumActivities" name="NumActivities" value="0"><br>
+            </div>
+            
+            <button type="button" onclick="calculateHangoutLevel()">Calculate</button>
+
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+    function calculateHangoutLevel() {
+        var Duration = document.getElementById('Duration').value;
+        var NumSubstances = document.getElementById('NumSubstances').value;
+        var NumUncs = document.getElementById('NumUncs').value;
+        var NumAunties = document.getElementById('NumAunties').value;
+        var DistanceTraveledFromAdis = document.getElementById('DistanceTraveledFromAdis').value;
+        var NumActivities = document.getElementById('NumActivities').value;
+        
+        // Convert input values to numbers
+        Duration = Number(Duration);
+        NumSubstances = Number(NumSubstances);
+        NumUncs = Number(NumUncs);
+        NumAunties = Number(NumAunties);
+        DistanceTraveledFromAdis = Number(DistanceTraveledFromAdis);
+        NumActivities = Number(NumActivities);
+        
+        // Unc Equation
+        var result = (5/2) * Math.log10(Duration * NumSubstances * (NumUncs + (3/2) * NumAunties) * Math.log2(DistanceTraveledFromAdis + NumActivities + 1));
+        
+        // Check result conditions
+        if (result < 0) {
+            document.getElementById('result').innerText = "Invalid Unc";
+        } else if (result > 10) {
+            document.getElementById('result').innerText = "Unc Overload";
+        } else {
+            // Round result to 1 decimal place
+            result = result.toFixed(1);
+            document.getElementById('result').innerText = "Unc Level: " + result;
+        }
+    }
+    </script>
+</body>
+</html>
