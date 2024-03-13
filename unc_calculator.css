@@ -66,3 +66,47 @@ button {
   font-weight: 400;
   font-style: normal;
 }
+
+@media (max-width: 768px) {
+    html, body {
+        font-size: 16px; /* Adjust base font size for mobile */
+    }
+
+    .container {
+        width: 95%; /* Increase width to use more screen space on mobile */
+    }
+
+    h1 {
+        font-size: 20px; /* Increase font size for heading on mobile */
+        margin-bottom: 20px; /* Adjust spacing */
+    }
+
+    .input-row label, .input-row input {
+        font-size: 16px; /* Increase font size for better readability */
+    }
+
+    .input-row {
+        flex-direction: column; /* Stack label and input vertically to manage space */
+        align-items: center; /* Center align items in the vertical stack */
+        margin-bottom: 20px; /* Adjust spacing */
+    }
+
+    .input-row label {
+        margin: 0 0 10px; /* Adjust label margin for vertical stacking */
+        text-align: center; /* Center-align labels for readability */
+    }
+
+    .input-row input {
+        width: 80%; /* Increase input width for easier interaction */
+        margin-bottom: 10px; /* Add margin below input for spacing in vertical stack */
+    }
+
+    button {
+        padding: 15px 0; /* Increase padding for easier interaction */
+        font-size: 20px; /* Increase font size for visibility */
+    }
+
+    #result {
+        font-size: 24px; /* Increase result font size for better visibility */
+    }
+}
