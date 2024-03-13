@@ -69,7 +69,7 @@ button {
 
 @media (max-width: 768px) {
     html, body {
-        font-size: 16px; /* Adjust base font size for mobile */
+        font-size: 24px; /* Adjust base font size for mobile */
     }
 
     .container {
@@ -77,7 +77,7 @@ button {
     }
 
     h1 {
-        font-size: 20px; /* Increase font size for heading on mobile */
+        font-size: 32px; /* Increase font size for heading on mobile */
         margin-bottom: 20px; /* Adjust spacing */
     }
 
@@ -107,6 +107,6 @@ button {
     }
 
     #result {
-        font-size: 24px; /* Increase result font size for better visibility */
+        font-size: 32px; /* Increase result font size for better visibility */
     }
 }
